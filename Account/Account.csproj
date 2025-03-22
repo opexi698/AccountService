@@ -178,8 +178,13 @@
     <Compile Include="Migrations\202503210715357_Init.Designer.cs">
       <DependentUpon>202503210715357_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202503220403471_AddActivity.cs" />
+    <Compile Include="Migrations\202503220403471_AddActivity.Designer.cs">
+      <DependentUpon>202503220403471_AddActivity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ActivityModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -294,6 +299,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202503210715357_Init.resx">
       <DependentUpon>202503210715357_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503220403471_AddActivity.resx">
+      <DependentUpon>202503220403471_AddActivity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -10,6 +10,9 @@ namespace Account.UnitOfWorks
     {
         IRepository<ApplicationUser> Users { get; }
         IRepository<IdentityRole> Roles { get; }
+        IRepository<Activity> Activies { get; }
+        IRepository<ActivityUser> ActivityUsers { get; }
+
         UserManager<ApplicationUser> UserManager { get; }
         RoleManager<IdentityRole> RoleManager { get; }
 

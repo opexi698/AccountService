@@ -11,6 +11,8 @@ namespace Account.UnitOfWorks
 
         public IRepository<ApplicationUser> Users { get; private set; }
         public IRepository<IdentityRole> Roles { get; private set; }
+        public IRepository<Activity> Activies { get; private set; }
+        public IRepository<ActivityUser> ActivityUsers { get; private set; }
 
         public UserManager<ApplicationUser> UserManager { get; private set; }
         public RoleManager<IdentityRole> RoleManager { get; private set; }
@@ -22,6 +24,10 @@ namespace Account.UnitOfWorks
 
             Users = new Repository<ApplicationUser>(_context);
             Roles = new Repository<IdentityRole>(_context);
+
+            Activies = new Repository<Activity>(_context);
+            ActivityUsers = new Repository<ActivityUser>(_context);
+
 
             var userStore = new UserStore<ApplicationUser>(_context);
             var roleStore = new RoleStore<IdentityRole>(_context);
