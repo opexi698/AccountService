@@ -19,8 +19,12 @@ namespace Account.Repositories
 
         public T GetFirst() => _dbSet.FirstOrDefault();
 
-        public IEnumerable<T> Get(Expression<Func<T, bool>> predicate)
+        public IEnumerable<T> Get(Expression<Func<T, bool>> predicate = null)
         {
+            if (predicate == null)
+            {
+                return _dbSet.ToList();
+            }
             return _dbSet.Where(predicate).ToList();
         }
 

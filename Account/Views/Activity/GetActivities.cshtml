@@ -1,0 +1,68 @@
+﻿@using Account.Models
+@model List<GetActivityViewModel>
+@{
+    ViewBag.Title = "GetActivities";
+}
+
+<h2>GetActivities</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].StartDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].EndDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Enrolments)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Enrolments)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Registration", "Activity", new { activityId = item.Id })">報名</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No activities found.</p>
+}

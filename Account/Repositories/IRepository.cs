@@ -8,7 +8,7 @@ namespace Account.Repositories
     {
         T GetFirst();
 
-        IEnumerable<T> Get(Expression<Func<T, bool>> predicate);
+        IEnumerable<T> Get(Expression<Func<T, bool>> predicate = null);
 
         void Add(T entity);
 
